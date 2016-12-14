@@ -9,9 +9,9 @@ The full MSBuild Artifactory Plugin documentation is available [here](https://ww
 ## Debuging the Plugin using VS
   1. Creaet a new project.
   2. Add the Artifactory template as described in the Artifactory MS-Build [documentation](https://www.jfrog.com/confluence/display/RTF/MSBuild+Artifactory+Plugin).
-  3. In the Deploy.targets file under the .artifacotry directory change the AssemblyFile the JFrog.Artifactory.ArtifactoryBuild is using.
-    The AssemblyFile should points to the JFrog.Artifactory.dll which was craeted during build the msbuild-artifactory-plugin.
-    For example: <UsingTask TaskName="JFrog.Artifactory.ArtifactoryBuild" AssemblyFile="SOME_PATH\msbuild-artifactory-plugin\lib\JFrog.Artifactory.dll" /> 
+  3. Change the AssemblyFile path of the JFrog.Artifactory.ArtifactoryBuild task in the Deploy.targets file.
+    The new AssemblyFile path should points to the JFrog.Artifactory.dll which was craeted during the msbuild-artifactory-plugin build.<br/>
+    For example: ```<UsingTask TaskName="JFrog.Artifactory.ArtifactoryBuild" AssemblyFile="%MS_Build_Project_Path%\msbuild-artifactory-plugin\lib\JFrog.Artifactory.dll" /> ```
   4. Close the project.
   5. Open the msbuild-artifactory-plugin.
   6. Right click on the msbuild-artifacoty-plugin --> properties
